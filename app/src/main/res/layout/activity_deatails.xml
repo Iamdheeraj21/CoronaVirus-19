@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".DetailsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/linearLayout"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:id="@+id/backImage"
+                android:src="@drawable/ic_round_arrow_back_24"
+                android:layout_marginLeft="5dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_CountryName"
+                android:textSize="20sp"
+                android:text="Country Name"
+                android:layout_marginTop="11dp"
+                android:layout_marginStart="20dp"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="20dp" />
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/linearLayout"
+            android:id="@+id/detailsFlagImage"
+            tools:ignore="ContentDescription" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/detailsFlagImage"
+            android:layout_margin="10dp"
+            android:id="@+id/cardView1"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Cases"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="6.5dp"
+                android:layout_marginStart="5dp"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:id="@+id/totalCases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="250dp"
+                android:layout_marginLeft="280dp"
+                android:layout_marginTop="6.5dp"
+                android:text="0"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/cardView1"
+            android:id="@+id/cardView2"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today Cases"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="6.5dp"
+                android:layout_marginStart="5dp"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:id="@+id/todayCases"
+                android:text="0"
+                android:layout_marginStart="250dp"
+                android:layout_marginTop="6.5dp"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="280dp" />
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/cardView3"
+            android:layout_below="@id/cardView2"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active Cases"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="6.5dp"
+                android:layout_marginStart="5dp"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:id="@+id/activeCases"
+                android:text="0"
+                android:layout_marginStart="250dp"
+                android:layout_marginTop="6.5dp"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="280dp" />
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/cardView3"
+            android:id="@+id/cardView4"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recovered"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="6.5dp"
+                android:layout_marginStart="5dp"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="0"
+                android:id="@+id/recovered"
+                android:layout_marginStart="250dp"
+                android:layout_marginTop="6.5dp"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="280dp" />
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@id/cardView4"
+            android:id="@+id/cardView5"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Deaths"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="6.5dp"
+                android:layout_marginStart="5dp"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:id="@+id/totalDeaths"
+                android:text="0"
+                android:layout_marginStart="250dp"
+                android:layout_marginTop="6.5dp"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="280dp" />
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/cardView5"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/cardView6"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today Deaths"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="6.5dp"
+                android:layout_marginStart="5dp"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="0"
+                android:id="@+id/todayDeaths"
+                android:layout_marginStart="250dp"
+                android:layout_marginTop="6.5dp"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="280dp" />
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_below="@id/cardView6"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/cardView7"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Critical"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="6.5dp"
+                android:layout_marginStart="5dp"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="5dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="0"
+                android:id="@+id/criticalCase"
+                android:layout_marginStart="250dp"
+                android:layout_marginTop="6.5dp"
+                tools:ignore="HardcodedText"
+                android:layout_marginLeft="280dp" />
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
