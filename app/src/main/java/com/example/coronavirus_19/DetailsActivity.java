@@ -21,18 +21,18 @@ public class DetailsActivity extends AppCompatActivity {
         initViews();
 
         Intent getIntent=getIntent();
-        positionCountry=getIntent.getIntExtra("position",0);
+//        positionCountry=getIntent.getIntExtra("position");
         flagImageUrl=AffectedCountries.exampleItems.get(positionCountry).getFlag();
         //Get and Set the Country CoronaVirus Details
-        Glide.with(getApplicationContext()).load(flagImageUrl).placeholder(R.drawable.ic_baseline_flag_24).into(imageView);
-        countryName.setText(AffectedCountries.exampleItems.get(positionCountry).getCountry());
-        totalCases.setText(AffectedCountries.exampleItems.get(positionCountry).getCases());
-        todayCases.setText(AffectedCountries.exampleItems.get(positionCountry).getTodayCases());
-        totalDeaths.setText(AffectedCountries.exampleItems.get(positionCountry).getDeaths());
-        todayDeaths.setText(AffectedCountries.exampleItems.get(positionCountry).getTodayDeaths());
-        critical.setText(AffectedCountries.exampleItems.get(positionCountry).getCritical());
-        recovered.setText(AffectedCountries.exampleItems.get(positionCountry).getRecovered());
-        active.setText(AffectedCountries.exampleItems.get(positionCountry).getActive());
+        Glide.with(getApplicationContext()).load(getIntent.getStringExtra("cUrl")).placeholder(R.drawable.ic_baseline_flag_24).into(imageView);
+        countryName.setText(getIntent.getStringExtra("cName"));
+        totalCases.setText(getIntent.getStringExtra("cTotalCases"));
+        todayCases.setText(getIntent.getStringExtra("cCases"));
+        totalDeaths.setText(getIntent.getStringExtra("cTotalDeaths"));
+        todayDeaths.setText(getIntent.getStringExtra("cTodayDeaths"));
+        critical.setText(getIntent.getStringExtra("cCritical"));
+        recovered.setText(getIntent.getStringExtra("cRecovered"));
+        active.setText(getIntent.getStringExtra("cactive"));
 
         backImage.setOnClickListener(v -> {
             Intent intent=new Intent(DetailsActivity.this,AffectedCountries.class);
@@ -54,5 +54,11 @@ public class DetailsActivity extends AppCompatActivity {
         backImage=findViewById(R.id.backImage);
         active=findViewById(R.id.activeCases);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(DetailsActivity.this,AffectedCountries.class));
+        finish();
     }
 }

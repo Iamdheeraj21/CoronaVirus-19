@@ -87,6 +87,7 @@ public class AffectedCountries extends AppCompatActivity {
     }
 
     private void fetchAllData(){
+        exampleItems.clear();
         String url="https://disease.sh/v3/covid-19/countries";
         StringRequest stringRequest=new StringRequest(Request.Method.GET, url, response -> {
             try {
@@ -117,5 +118,10 @@ public class AffectedCountries extends AppCompatActivity {
         }, error -> Toast.makeText(AffectedCountries.this, error.getMessage(), Toast.LENGTH_SHORT).show());
         RequestQueue requestQueue=Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+    }
+
+    @Override
+    public void onBackPressed() {
+       onBackPressed();
     }
 }

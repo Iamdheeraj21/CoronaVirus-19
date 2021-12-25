@@ -1,5 +1,6 @@
     package com.example.coronavirus_19;
 
+    import android.annotation.SuppressLint;
     import android.content.Context;
     import android.content.Intent;
     import android.view.LayoutInflater;
@@ -25,15 +26,16 @@
         this.context = context;
         this.adapters = adapters;
     }
+    @NonNull
     @Override
     public CustomViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
-        View view= LayoutInflater.from(context).inflate(R.layout.list_item,null,false);
+        View view= LayoutInflater.from(context).inflate(R.layout.list_item,parent,false);
         return new CustomViewholder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CustomViewholder holder, int position)
+    public void onBindViewHolder(@NonNull CustomViewholder holder, @SuppressLint("RecyclerView") int position)
     {
         CountryModel countryModel=adapters.get(position);
         String flagImageUrl= countryModel.getFlag();
@@ -47,7 +49,15 @@
             public void onClick(View v)
             {
                 Intent intent=new Intent(context,DetailsActivity.class);
-                intent.putExtra("position",position);
+                intent.putExtra("cName",countryName);
+                intent.putExtra("cTotalDeaths",countryModel.getDeaths());
+                intent.putExtra("cTodayDeaths",countryModel.getTodayDeaths());
+                intent.putExtra("cCases",countryModel.getTodayCases());
+                intent.putExtra("cTotalCases",countryModel.getCases());
+                intent.putExtra("cactive",countryModel.getActive());
+                intent.putExtra("cCritical",countryModel.getCritical());
+                intent.putExtra("cRecovered",countryModel.getRecovered());
+                intent.putExtra("cUrl",flagImageUrl);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
@@ -69,6 +79,7 @@
             imageView=itemView.findViewById(R.id.flagImage);
         }
     }
+    @SuppressLint("NotifyDataSetChanged")
     public void FilteredList(ArrayList<CountryModel> list)
     {
         adapters=list;
