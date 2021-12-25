@@ -122,6 +122,7 @@ public class AffectedCountries extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-       onBackPressed();
+        startActivity(new Intent(AffectedCountries.this,MainActivity.class));
+        finish();
     }
 }
